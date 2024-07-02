@@ -1,0 +1,2 @@
+dbt-bigquery==1.6
+dbt-osmosis==0.12.9
