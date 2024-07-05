@@ -1,15 +1,50 @@
-Welcome to your new dbt project!
+# qiita-dbt-osmosis-sample
 
-### Using the starter project
+Qiita 用サンプルコード。
 
-Try running the following commands:
-- dbt run
-- dbt test
+## データリネージ
 
+```mermaid
+classDiagram
+    class raw_orders {
+        id
+        user_id
+        order_date
+        status
+    }
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+    class raw_customers {
+        id
+        first_name
+        last_name
+    }
+
+    class stg_orders {
+        order_id
+        customer_id
+        order_date
+        status
+    }
+
+    class stg_customers {
+        customer_id
+        first_name
+        last_name
+    }
+
+    class customers {
+        customer_id
+        first_name
+        last_name
+        first_order_date
+        most_recent_order_date
+        number_of_orders
+    }
+
+    %%
+
+    raw_orders --> stg_orders
+    raw_customers --> stg_customers
+    stg_orders --> customers : customer_id で JOIN
+    stg_customers --> customers : customer_id で JOIN
+```
