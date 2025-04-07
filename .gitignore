@@ -5,4 +5,5 @@ env/
 .user.yml
 .DS_Store
 profiles.yml
+package-lock.yml
 memo/
