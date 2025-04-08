@@ -3,4 +3,4 @@ select
     user_id as customer_id,
     order_date,
     status
-from {{ source('YOUR_GC_DATASET', 'raw_orders') }}
+from {{ source('sample_dataset', 'raw_orders') }}

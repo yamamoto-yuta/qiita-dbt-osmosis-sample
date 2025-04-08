@@ -33,3 +33,7 @@ models:
   my_dbt_project:
     +materialized: table
     +dbt-osmosis: "_schema.yml"
+
+seeds:
+  my_dbt_project:
+    +dbt-osmosis: "_seeds.yml"

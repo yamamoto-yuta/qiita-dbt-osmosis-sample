@@ -1,8 +1,11 @@
 version: 2
 
 sources:
-  - name: YOUR_GC_DATASET
-    database: YOUR_GC_PROJECT_ID
+  - name: sample_dataset
+    schema: |
+      {{ target.dataset }}
+    database: |
+      {{ target.project }}
     tables:
       - name: raw_customers
       - name: raw_orders
