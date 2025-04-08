@@ -6,4 +6,3 @@ env/
 .DS_Store
 profiles.yml
 package-lock.yml
-memo/
